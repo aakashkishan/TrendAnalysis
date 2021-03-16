@@ -1,0 +1,181 @@
+1612463963518:--operation twitter --terms gabba fifer DRS
+1612463981815:kb-add-term --operation twitter --terms gabba fifer DRS
+1612463995926:kb-add-term --operation twitter --terms gabba
+1612464959881:kb-add-term --operation twitter --terms coronavirus
+1612475106181:kb-add-term --operation twitter --term gamestop
+1612475293028:stacktrace
+1612475387897:kb-add-term --operation twitter --term gamestop
+1612479681376:kb-add-term --operation twitter --term robinhood
+1612479694165:stacktrace
+1612479911664:kb-add-term --operation twitter --term robinhood
+1612479922069:stacktrace
+1612480104163:kb-add-term --operation twitter --term robinhood
+1612480118086:stacktrace
+1612480348753:kb-add-term --operation twitter --term robinhood
+1612480359053:stacktrace
+1612480400536:kb-add-term --operation twitter --term robinhood
+1612480408003:stacktrace
+1612480541328:kb-add-term --operation twitter --term robinhood
+1612480549693:stacktrace
+1612480621133:kb-add-term --operation twitter --term robinhood
+1612480632217:stacktrace
+1612480709437:kb-add-term --operation twitter --term robinhood
+1612480725402:stacktrace
+1612480831034:kb-add-term --operation twitter --term robinhood
+1612481214687:fb-add-term --operation twitter --term robinhood
+1612481225486:kb-add-term --operation twitter --term robinhood
+1612481305562:stacktrace
+1612481345681:kb-add-term --operation twitter --term robinhood
+1612481620158:fb-add-term --operation twitter --term trump
+1612481630029:kb-add-term --operation twitter --term trump
+1612802826084:kb-add-user --user cnn
+1612969023116:stacktrace
+1612969169059:kb-add-user --user cnn
+1612969174212:stacktrace
+1612969266787:kb-add-user --user cnn
+1612969810805:stacktrace
+1612970191522:kb-add-user --user cnn
+1612971549015:stacktrace
+1612971899078:kb-add-user --user cnn
+1612972809341:stacktrace
+1612973024751:kb-add-user --user cnn
+1612973662454:stacktrace
+1612974511826:kb-add-user --user cnn
+1612974518524:stacktrace
+1612974711333:kb-add-user --user cnn
+1612974933641:stacktrace
+1612975253570:kb-add-user --user cnn
+1612975259012:stacktrace
+1612975334857:kb-add-user --user cnn
+1612975342305:stacktrace
+1612975808182:kb-add-user --user cnn
+1612975813986:stacktrace
+1612976215053:kb-add-user --user cnn
+1612976464663:stacktrace
+1612976530184:kb-add-user --user cnn
+1612976539547:stacktrace
+1612976645489:kb-add-user --user cnn
+1612976650479:stacktrace
+1612976832061:kb-add-user --user cnn
+1612976841845:stacktrace
+1612976945750:kb-add-user --user cnn
+1612976954082:stacktrace
+1612977113221:kb-add-user --user cnn
+1612977124758:stacktrace
+1612977733366:kb-add-user --user cnn
+1612977746522:stacktrace
+1612977853215:kb-add-user --user cnn
+1612977860386:stacktrace
+1612977967053:kb-add-user --user cnn
+1612984007543:stacktrace
+1612984887952:kb-add-user --user cnn
+1612992580190:kb-add-user cnn
+1612993506436:kb-add-user --user bbcworld
+1612993531694:kb-add-user --user foxnews
+1612993546223:kb-add-user --user huffpost
+1612993561566:kb-add-user --user nytimes
+1612993703763:kb-add-user --user washingtonpost
+1613067966034:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1613067980358:stacktrace
+1613068303218:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1613070502580:kb-add-topic --topic cnn
+1613070637798:kb-add-topic cnn
+1613070902344:kb-add-topic --topic cnn
+1613071660190:kb-add-topic --topic washingtonpost
+1613071683435:kb-add-topic --topic bbcworld
+1613071696430:kb-add-topic --topic nytimes
+1613071704772:kb-add-topic --topic foxnews
+1613071716485:kb-add-topic --topic huffpost
+1613071804977:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1613078485444:stacktrace
+1613088943359:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1613092933754:kb-add-topic --topic cnn
+1613093301409:kb-add-topic --topic nytimes
+1613093308830:kb-add-topic --topic bbcworld
+1613093315748:kb-add-topic --topic huffpost
+1613093325290:kb-add-topic --topic foxnews
+1613093335338:kb-add-topic --topic washingtonpost
+1613093507009:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1613686667893:stacktrace
+1613688672984:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1613688793847:stacktrace
+1613689511846:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1613693035234:kb-add-topic --topic cnbc
+1613693475129:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1613694002916:ext.contains(trend)) {
+1613694020168:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1613699736015:kb-trend-compare --trends covid gamestop robinhood trump market
+1613701582427:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1613946297897:kb-trend-compare --trends covid gamestop robinhood trump market
+1613946352203:stacktrace
+1613946596055:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1613947405283:kb-add-topic --topic cnn
+1613947414053:stacktrace
+1613947577642:kb-add-topic --topic cnn
+1613947618390:stacktrace
+1613948887541:kb-add-topic --topic cnn
+1613949030852:stacktrace
+1613949271091:kb-add-topic --topic cnn
+1613949282209:stacktrace
+1613949392986:kb-add-topic --topic cnn
+1613950314522:stacktrace
+1613950676704:kb-add-topic --topic cnn
+1613950695893:kb-add-topic --topic cnbc
+1613950704339:kb-add-topic --topic foxnews
+1613950720161:kb-add-topic --topic bbcworld
+1613950726233:kb-add-topic --topic nytimes
+1613950732251:kb-add-topic --topic washingtonpost
+1613950740628:kb-add-topic --topic huffpost
+1613950809861:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1613964686965:stacktrace
+1614824302870:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1614824790994:kb-trend-compare --trends covid gamestop robinhood trump market
+1614825104255:kb-add-topic --topic cnn
+1614825115176:kb-add-topic --topic cnbc
+1614825120351:kb-add-topic --topic foxnews
+1614825128100:kb-add-topic --topic bbcworld
+1614825135115:kb-add-topic --topic nytimes
+1614825141194:kb-add-topic --topic huffpost
+1614825150009:kb-add-topic --topic washingtonpost
+1614825185881:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1614825282612:kb-trend-compare --trends covid gamestop robinhood trump market
+1614825327129:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1614838711725:stacktrace
+1614845343163:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1614846429729:stacktrace
+1614846479786:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1614846503539:stacktrace
+1614846558749:kb-trend-compare-window --trends covid gamestop robinhood trump market
+1614891558558:tb-add-topics
+1614891643983:stacktrace
+1614891890074:tb-add-topics
+1614891897553:stacktrace
+1614891945881:tb-add-topics
+1614891973897:stacktrace
+1614892067495:tb-add-topics
+1615161068705:tb-trend-analysis
+1615161081289:stacktrace
+1615161440110:tb-add-topics
+1615161458245:tb-trend-analysis
+1615161503979:stacktrace
+1615162327874:tb-add-topics
+1615162341478:tb-trend-analysis
+1615162662214:tb-add-topcis
+1615162670462:tb-add-topics
+1615162697830:tb-trend-analysis
+1615253230639:kb-add-topic --topic cnbc
+1615807932158:tb-add-topics
+1615807940003:stacktrace
+1615808255660:tb-add-topics
+1615808263159:stacktrace
+1615808552767:tb-add-topics
+1615808836227:stacktrace
+1615809583993:tb-add-topics
+1615810642780:stacktrace
+1615810885638:tb-add-topics
+1615831596351:tb-mp-st-plot --trend gamestop
+1615850872432:tb-mp-mt-plot --trends gamestop reddit race election
+1615851001430:tb-mp-mt-plot gamestop reddit election
+1615853423601:tb-sp-mt-plot gamestop reddit race
+1615853585560:tb-mp-st-plot --trend gamestop
+1615853652257:tb-mp-mt-plot gamestop reddit election
