@@ -26,6 +26,7 @@ public class CheckMultipleTrendMultipleProducer extends DoFn<Tweet, KV<String, S
         for(String trend: trends) {
             for(String tweetWord: tweetWords) {
                 if(tweetWord.equalsIgnoreCase(trend)) {
+                    System.out.println(String.format("Term:%s => Producer:%s", trend, tweet.getUser().getScreenName()));
                     context.output(KV.of(trend, tweet.getUser().getScreenName()));
                 }
             }

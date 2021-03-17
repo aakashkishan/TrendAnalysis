@@ -1,10 +1,11 @@
 package com.example.kafka.beam.app.cli;
 
+import com.example.kafka.beam.app.services.impl.kafka.KafkaTopicProducer;
 import com.example.kafka.beam.app.services.impl.kafka.KafkaTrendAnalyser;
 import com.example.kafka.beam.app.services.impl.TwitterProducer;
-import com.example.kafka.beam.app.services.impl.text.MultipleProducerMultipleTrendPlotter;
-import com.example.kafka.beam.app.services.impl.text.MultipleProducerSingleTrendPlotter;
-import com.example.kafka.beam.app.services.impl.text.SingleProducerMultipleTrendPlotter;
+import com.example.kafka.beam.app.services.impl.trend.MultipleProducerMultipleTrendPlotter;
+import com.example.kafka.beam.app.services.impl.trend.MultipleProducerSingleTrendPlotter;
+import com.example.kafka.beam.app.services.impl.trend.SingleProducerMultipleTrendPlotter;
 import com.example.kafka.beam.app.utils.PathUtils;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
@@ -17,7 +18,6 @@ import org.springframework.shell.standard.ShellOption;
 
 import java.io.BufferedWriter;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -48,25 +48,6 @@ public class KafkaBeamCli {
         System.out.println("Successful Load");
     }
 
-    public void loadTopicsDummy() {
-        this.topics.add("cnn");
-        this.topics.add("bbcworld");
-        this.topics.add("washingtonpost");
-        this.topics.add("huffpost");
-        this.topics.add("nytimes");
-        this.topics.add("foxnews");
-    }
-
-    public void writeToTopics() throws IOException {
-        String filePath = String.format("%s%s%s", PathUtils.BASE_PATH, PathUtils.TOPICS, PathUtils.CSV_EXTENSION);
-        System.out.println(filePath);
-        BufferedWriter writer = Files.newBufferedWriter(Paths.get(filePath));
-        CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT);
-        csvPrinter.printRecord(this.topics);
-        printTopics();
-        System.out.println("Successful Write");
-    }
-
     public void printTopics() {
         for(String topic: this.topics) {
             System.out.println(topic);
@@ -74,83 +55,34 @@ public class KafkaBeamCli {
     }
 
     /* Solely for Twitter Analysis */
-    @ShellMethod(key="kb-add-term", value="Add twitter track term and load the data onto Apache Kafka")
-    public boolean addTrackingTermAndLoadToKafka(@ShellOption("--term") String term) throws IOException {
-        boolean isAddedAndLoaded = false;
-        if(term != null) {
-            twitterProducer.setTerm(term);
-
-            FileWriter writer = new FileWriter("./terms.csv", true);
-            writer.write(String.format("%s,\n", term));
-            writer.close();
-            log.info(String.format("Term=%s added to file", term));
-
-            isAddedAndLoaded = twitterProducer.loadTwiiterDataToKafka();
-        }
-        return isAddedAndLoaded;
-    }
-
-//    @ShellMethod(key="kb-add-topic", value="Add twitter topic and the load the tweets onto Apache Kafka")
-//    public boolean addTopicAndLoadToKafka(@ShellOption("--topic") String topic) throws IOException, InterruptedException, CsvValidationException {
-//        boolean isAddedAndLoaded = false;
-//        if(topic != null) {
-////            this.loadTopics();
-////            this.topics.add(topic);
-//            new KafkaTopicProducer().writeTweetsToKafka(topic);
-////            writeToTopics();
-//            isAddedAndLoaded = true;
-//        }
-//        return isAddedAndLoaded;
-//    }
-
-    @ShellMethod(key="kb-trend-compare-window", value="Show Trend Comparison between the news agencies with windowing")
-    public boolean checkTrendComparisonWithWindowing(@ShellOption(value = "--trends", arity = 5) String[] trends) throws IOException, CsvValidationException {
-        boolean isGenerated = false;
-        for(String trend: trends) {
-            System.out.println(trend);
-        }
-        if(trends != null) {
-            this.loadTopicsDummy();
-            printTopics();
-            new KafkaTrendAnalyser().getTrendComparisonWithWindowing(trends, topics);
-            isGenerated = true;
-        }
-        return isGenerated;
-    }
-
-    @ShellMethod(key="kb-trend-compare", value="Show Trend Comparison between the news agencies with windowing")
-    public boolean checkTrendComparison(@ShellOption(value = "--trends", arity = 5) String[] trends) throws IOException, CsvValidationException {
-        boolean isGenerated = false;
-        for(String trend: trends) {
-            System.out.println(trend);
-        }
-        if(trends != null) {
-            this.loadTopicsDummy();
-            printTopics();
-            new KafkaTrendAnalyser().getTrendComparisonWithSplittableWindowing(trends, topics);
-            isGenerated = true;
-        }
-        return isGenerated;
+    @ShellMethod(key="kb-add-topics", value="Add Twitter Streams to Kafka")
+    public void addTwitterStreamsToKafka() throws IOException {
+        new KafkaTopicProducer().writeTweetTopicsToKafka();
     }
 
     /*
      * ===========================
-     * =       TEXT-BEAM         =
+     * =       KAFKA-BEAM         =
      * ===========================
      */
-    @ShellMethod(key="tb-sp-mt-plot", value="Single Producer Multiple Trend Plotter")
+    @ShellMethod(key="kb-sp-mt-plot", value="Single Producer Multiple Trend Plotter")
     public void performTrendPlotterForSingleProducerMultipleTrend(@ShellOption(arity = 3) String[] trends) {
-        new SingleProducerMultipleTrendPlotter().plotSingleTwitterTrend(trends);
+        new SingleProducerMultipleTrendPlotter().plotSingleProducerMultipleTwitterTrend(trends);
     }
 
-    @ShellMethod(key="tb-mp-st-plot", value="Multiple Producer Single Trend Plotter")
+    @ShellMethod(key="kb-mp-st-plot", value="Multiple Producer Single Trend Plotter")
     public void performTrendPlotterForMultipleProducerSingleTrend(@ShellOption("--trend") String trend) {
         new MultipleProducerSingleTrendPlotter().plotMultipleProducerSingleTwitterTrend(trend);
     }
 
-    @ShellMethod(key="tb-mp-mt-plot", value="Multiple Producer Multiple Trend Plotter")
+    @ShellMethod(key="kb-mp-mt-plot", value="Multiple Producer Multiple Trend Plotter")
     public void performTrendPlotterForMultipleProducerMultipleTrend(@ShellOption(arity = 3) String[] trends) {
         new MultipleProducerMultipleTrendPlotter().plotMultipleProducerMultipleTwitterTrend(trends);
+    }
+
+    @ShellMethod(key="kb-plot", value="Multiple Producer Multiple Trend Plotter")
+    public void performTrendPlotterForMultipleProducerMultipleTrends() {
+        new KafkaTrendAnalyser().getTrendComparisonWithWindowing();
     }
 
 }

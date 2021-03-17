@@ -17,6 +17,7 @@ public class CheckSingleTrendMultipleProducer extends DoFn<Tweet, String> {
         String[] tweetWords = tweet.getFullText().toLowerCase().split("[ \\-.]");
         for(String tweetWord: tweetWords) {
             if(tweetWord.equalsIgnoreCase(searchTerm)) {
+                System.out.println(String.format("Producer:%s", tweet.getUser().getScreenName()));
                 context.output(tweet.getUser().getScreenName());
             }
         }

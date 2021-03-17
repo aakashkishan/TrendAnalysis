@@ -27,17 +27,17 @@ public class Tweet implements Serializable {
     @JsonProperty("full_text")
     private String fullText;
 
-    public void setCreatedAt(String createdAt) throws ParseException {
-//        final String twitterFormat="EEE MMM dd HH:mm:ss ZZZZZ yyyy";
-//        SimpleDateFormat sf = new SimpleDateFormat(twitterFormat);
-//        sf.setLenient(true);
-//        this.createdAt = sf.parse(createdAt);
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss X uuuu", Locale.ROOT);
-        this.createdAt = OffsetDateTime.parse(createdAt, dtf).toInstant();
-    }
+//    public void setCreatedAt(String createdAt) throws ParseException {
+////        final String twitterFormat="EEE MMM dd HH:mm:ss ZZZZZ yyyy";
+////        SimpleDateFormat sf = new SimpleDateFormat(twitterFormat);
+////        sf.setLenient(true);
+////        this.createdAt = sf.parse(createdAt);
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss X uuuu", Locale.ROOT);
+//        this.createdAt = OffsetDateTime.parse(createdAt, dtf).toInstant();
+//    }
 
     @JsonProperty("created_at")
-    private Instant createdAt;
+    private String createdAt;
 
     @JsonProperty("retweet_count")
     private Long retweetCount;
