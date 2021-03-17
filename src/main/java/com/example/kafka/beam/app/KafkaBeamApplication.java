@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class KafkaBeamApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(KafkaBeamApplication.class, args);
+	    SpringApplication.run(KafkaBeamApplication.class, args);
 	}
 
 }
