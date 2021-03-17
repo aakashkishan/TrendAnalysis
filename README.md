@@ -29,20 +29,20 @@ $ mvn clean package
 Once the Spring shell is launched, Run the various commands on the spring shell:-
 1. Publish all the Twitter channels to Kafka
 ```bash
->shell: $ kb-add-topics
+$ kb-add-topics
 ```
 
 2. Trend Plotter for Single Producer and check for Multiple Trends
 ```bash
->shell: $ kb-sp-mt-plot <trend-1> <trend-2> <trend-3>
+$ kb-sp-mt-plot <trend-1> <trend-2> <trend-3>
 ```
 
 3. Trend Plotter for Multiple Producer and check for Single Trends
 ```bash
->shell: $ kb-mp-st-plot --trend <trend>
+$ kb-mp-st-plot --trend <trend>
 ```
 
 4. Trend Plotter for Multiple Producer and check for Multiple Trends
 ```bash
->shell: $ kb-mp-mt-plot <trend-1> <trend-2> <trend-3>
+$ kb-mp-mt-plot <trend-1> <trend-2> <trend-3>
 ```
