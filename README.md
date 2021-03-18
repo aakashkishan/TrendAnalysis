@@ -21,6 +21,11 @@
 
 ### Installation
 
+Start the Kafka and Zookeeper Containers
+```bash
+$ docker-compose up -f kafka-zookeeper.yml -d
+```
+
 Build the project and run it
 ```bash
 $ mvn clean package
